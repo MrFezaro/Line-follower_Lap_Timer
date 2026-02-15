@@ -2,7 +2,6 @@
 
 // Pin definitions
 #define SENSOR_PIN 15       // pulse sensor
-#define BUTTON_START 12     // start/restart button
 
 // Timer & pulse variables
 bool bip = false;
@@ -57,7 +56,6 @@ void setup() {
     display.setTextColor(SH110X_WHITE);
 
     pinMode(SENSOR_PIN, INPUT);
-    pinMode(BUTTON_START, INPUT_PULLUP);
 
     if (analogRead(SENSOR_PIN) < 2200) {
         terminalBootSequence();
@@ -75,12 +73,6 @@ void loop() {
     prevSensorValue = sensorValue;
 
     bip = blink(sensorValue);
-
-    //Serial.print(sensorValue);
-    //Serial.print(" ");
-    //Serial.print(delta);
-    //Serial.print(" ");
-    //Serial.println(calibration);
 
     // --- Calibration with blinking text and alpha filter ---
     static uint64_t calibrationStartTime = 0;
@@ -135,7 +127,7 @@ void loop() {
             break;
         }
 
-        case 1: { // wait for second pulse to record blinks
+        case 1: {
             lapseTime = esp_timer_get_time() - nowTime;
 
             display.clearDisplay();
