@@ -1,6 +1,8 @@
 # Lap Timer for Line Follower Robots
 
-![Main Picture](include/timer.png)
+<p align="center">
+  <img src="include/timer.png" width="400">
+</p>
 
 ## Purpose
 
