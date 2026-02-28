@@ -13,7 +13,7 @@ It detects when a robot passes a fixed point on the track and starts a timer wit
 
 ## How It Works
 
-The timing gate monitors a detection zone using a IR sensor. When a object interrupts or passes through this zone, the system triggers a timer start event.
+The lap timer has a detection zone using a IR sensor. When a object interrupts or passes through this zone, the system triggers a timer start event.
 
 General operation flow:
 
